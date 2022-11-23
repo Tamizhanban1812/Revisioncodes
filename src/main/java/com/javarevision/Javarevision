@@ -1,0 +1,4 @@
+Reverse a Number:
+				rev = rev*10 + num%10 (rev%10 -> will display the last num (Ex: 123 -> 3)
+				num / 10 -> this will remove the last num (Ex: 123 -> 12)
+	

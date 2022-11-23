@@ -1,0 +1,75 @@
+1.To Sort:
+		Use collections.sort
+2.To store different string values : 
+		String ... Value
+3.For URL Connection :
+		Get all the links by tag name and get the link using attribute value
+		Httpurlconnection urcon = (Httpurlconnection) url.openconnection();	
+		urcon.connect();
+		urcon.getresponsecode();
+4.For Authentication Popups:
+		driver.switchto().alert() - Accept/Dismiss/Sendkeys
+		driver.get (https://username:password@url)
+5.IFrames:
+		driver.switchto().frame(); -> Indexnumber, WebElement, Name/ID
+		driver.switchto().parentframe(); -> Moves to outerframe or Mainframe
+		driver.switchto().defaultcontent(); -> Moves to Mainframe
+6.WebTable:(Static & Dynamic)
+		tr["+r+"]//td["+c+"]
+7.Date Picker:
+		while(true){
+			if(MonthYear.equals(recmonth){
+				date.click;
+				break;
+				}
+			else{
+			previous button.click;
+			recmonth = recmonthelement;
+			}
+			}
+8.Tooltip:
+		Tooltip can be received by getting the title attribute of the particular WebElement.
+9.Cookie:
+		To store all cookie -> driver.manage().cookies();
+		To add a cookie -> cookie obj = new Cookie (" "," "); driver.manage.addcookie(obj);
+10. Download Files:
+		String Location = system.getproperty("user.dir") + "\\downloads\\";
+		HashMap Preferences = new HashMap();
+		Preferences.put("download.default_directory", Location);
+		Chromeoptions options = new Chromeoptions();
+		options.setexperimentaloptions("prefs", "Preferences");
+		Webdriver driver = new ChromeDriver(options);
+11. Upload File:
+		if type attribute = file, then directly upload using send keys.
+12. Data Driven (POI):
+		To convert all value into string: DataFormatter df = new DataFormatter();
+		df.formatcellvalue(cell);
+		POI Structure:
+		FileInputStream fs = new FileInputStream(".\\FolderName\\FileName.extension");
+		XSSFWorkbook wb = new XSSFWorkbook();
+		XSSFSheet s = wb.getsheetat(indexno//SheetName);
+		s.getlastrownum() -> Row Count , s.getrow(rownum).getlastcellnum() -> Column Count
+		Use forloop to read out values
+		NOTE: For @Dataprovider return String[][] Data = new String[rowcount][columncount];
+		Data[][] = read data in for loop;
+13. Slider:
+		driver.sendkeys(Keys.Arrow_Left);
+14. Screenshot:
+		Takesscreenshot ts = (Takesscreenshot) driver;
+		File Src = ts.getscreenshotas(Outtype.file);
+		File Trg = new File (".\\FolderName\\FileName.extension")
+		File.copyfiles(Source, Target);
+15. Right Click, Drag&Drop:
+		Actions ac = new Actions();
+		ac.contextclick(WebElement) -> Rightclick , ac.doubleclick -> to double click, ac.movetoelement -> Hover
+16. MovetoTabs:
+		JavaScriptExecutor js = (JavaScriptExecutor) driver;
+		js.executescript("window.open()"); //To Scroll -> js.executescript("window.scrollBy(0,200)");
+		ArrayList <String> Tab1 = new ArrayList <String> (driver.getwindowhandles());
+		driver.switchto().window(Tab1.get(indexno));
+17. Navigate Methods:
+		driver.navigate().refresh(); //back(); // forward(); // driver.navigateto();
+18: Dropdown:
+		driver.findelements(); //Use for loop and if
+
+		
